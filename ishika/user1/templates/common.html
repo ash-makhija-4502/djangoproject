@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style3.css">
+    
+    <script src="https://kit.fontawesome.com/5efc5f1d6c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <p class="logo" id="ish"> <span>Ishika's</span> Fashion </p>
+                <ul id="sidemenu">
+                   
+                    <li><a href="{% url 'dcb' %}">Product</a></li>
+                    {% if a %}
+                    <li><a href="">Profile </a></li>
+                    <li><a href="">My order</a></li>
+                    <li><a href="{% url 'logout1' %}">Log out  </a></li>
+                   
+                    
+                    {% else %}
+                    <li><a href="{% url 'abcd' %}">Log In</a></li>
+                    <li><a href="{% url 'rp' %}">Sign Up</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'ishika' %}">contact us </a></li>
+                    <li><a href="{% url 'ish' %}">About</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+           
+
+              {% block content %}
+
+
+              {% endblock %}
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

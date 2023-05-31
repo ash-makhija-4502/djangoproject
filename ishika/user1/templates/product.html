@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style3.css">
+    <script src="https://kit.fontawesome.com/5efc5f1d6c.js" crossorigin="anonymous"></script>
+</head>
+
+<body> 
+<div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title"> Categories</h1>
+            <div class="work-list">
+                {% for i in data %}
+                <div class="work">
+                    <a href ="{% url 'productfilter' i.id %}">
+                    <img src="{{i.img.url}}">
+                    <div class="layer">
+                        <h3>{{i.categoryname}}</h3>
+                        
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        
+                    </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
